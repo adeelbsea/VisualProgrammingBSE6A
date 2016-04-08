@@ -1,0 +1,6 @@
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Delegate\Practice Delegate\bin\Debug\Practice Delegate.exe.config
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Delegate\Practice Delegate\bin\Debug\Practice Delegate.exe
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Delegate\Practice Delegate\bin\Debug\Practice Delegate.pdb
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Delegate\Practice Delegate\obj\Debug\Practice Delegate.csprojResolveAssemblyReference.cache
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Delegate\Practice Delegate\obj\Debug\Practice Delegate.exe
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Delegate\Practice Delegate\obj\Debug\Practice Delegate.pdb

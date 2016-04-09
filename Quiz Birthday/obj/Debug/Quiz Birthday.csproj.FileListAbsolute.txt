@@ -1,0 +1,5 @@
+c:\users\adeel\documents\visual studio 2013\Projects\Quiz Birthday\Quiz Birthday\bin\Debug\Quiz Birthday.exe.config
+c:\users\adeel\documents\visual studio 2013\Projects\Quiz Birthday\Quiz Birthday\bin\Debug\Quiz Birthday.exe
+c:\users\adeel\documents\visual studio 2013\Projects\Quiz Birthday\Quiz Birthday\bin\Debug\Quiz Birthday.pdb
+c:\users\adeel\documents\visual studio 2013\Projects\Quiz Birthday\Quiz Birthday\obj\Debug\Quiz Birthday.exe
+c:\users\adeel\documents\visual studio 2013\Projects\Quiz Birthday\Quiz Birthday\obj\Debug\Quiz Birthday.pdb

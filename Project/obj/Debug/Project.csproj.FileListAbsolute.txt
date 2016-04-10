@@ -1,1 +1,10 @@
 c:\users\adeel\documents\visual studio 2013\Projects\Project\Project\bin\Debug\Project.exe.config
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\obj\Debug\Project.fmMain.resources
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\obj\Debug\Project.Properties.Resources.resources
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\obj\Debug\Project.csproj.GenerateResource.Cache
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\bin\Debug\Project.exe
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\bin\Debug\Project.pdb
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\obj\Debug\Project.exe
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\obj\Debug\Project.pdb
+C:\Users\Adeel\documents\visual studio 2013\Projects\Project\Project\obj\Debug\Project.Keyboard.resources

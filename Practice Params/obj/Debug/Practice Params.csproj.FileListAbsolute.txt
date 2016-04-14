@@ -1,6 +1,0 @@
-c:\users\adeel\documents\visual studio 2013\Projects\Practice Params\Practice Params\bin\Debug\Practice Params.exe.config
-c:\users\adeel\documents\visual studio 2013\Projects\Practice Params\Practice Params\bin\Debug\Practice Params.exe
-c:\users\adeel\documents\visual studio 2013\Projects\Practice Params\Practice Params\bin\Debug\Practice Params.pdb
-c:\users\adeel\documents\visual studio 2013\Projects\Practice Params\Practice Params\obj\Debug\Practice Params.csprojResolveAssemblyReference.cache
-c:\users\adeel\documents\visual studio 2013\Projects\Practice Params\Practice Params\obj\Debug\Practice Params.exe
-c:\users\adeel\documents\visual studio 2013\Projects\Practice Params\Practice Params\obj\Debug\Practice Params.pdb

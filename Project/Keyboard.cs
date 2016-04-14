@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Keyboard : Form
+    public partial class fmKeyboard : Form
     {
-        public Keyboard()
+        public fmKeyboard()
         {
             InitializeComponent();
         }

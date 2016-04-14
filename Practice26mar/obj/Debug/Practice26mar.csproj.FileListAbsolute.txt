@@ -1,6 +1,0 @@
-c:\users\adeel\documents\visual studio 2013\Projects\Practice26mar\Practice26mar\bin\Debug\Practice26mar.exe.config
-c:\users\adeel\documents\visual studio 2013\Projects\Practice26mar\Practice26mar\bin\Debug\Practice26mar.exe
-c:\users\adeel\documents\visual studio 2013\Projects\Practice26mar\Practice26mar\bin\Debug\Practice26mar.pdb
-c:\users\adeel\documents\visual studio 2013\Projects\Practice26mar\Practice26mar\obj\Debug\Practice26mar.csprojResolveAssemblyReference.cache
-c:\users\adeel\documents\visual studio 2013\Projects\Practice26mar\Practice26mar\obj\Debug\Practice26mar.exe
-c:\users\adeel\documents\visual studio 2013\Projects\Practice26mar\Practice26mar\obj\Debug\Practice26mar.pdb

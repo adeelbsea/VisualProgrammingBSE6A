@@ -21,5 +21,12 @@ namespace Project
         {
 
         }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fmKeyboard ob = new fmKeyboard();
+            ob.Show();
+        }
     }
 }

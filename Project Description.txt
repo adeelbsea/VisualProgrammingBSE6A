@@ -1,1 +1,0 @@
-Typing speed test is a software which tests the number of keystrokes, number of correct words typed and the gross speed according to words per minute.

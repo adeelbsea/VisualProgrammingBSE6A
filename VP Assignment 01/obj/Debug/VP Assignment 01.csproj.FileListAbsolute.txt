@@ -1,6 +1,0 @@
-c:\users\adeel\documents\visual studio 2013\Projects\VP Assignment 01\VP Assignment 01\bin\Debug\VP Assignment 01.exe.config
-c:\users\adeel\documents\visual studio 2013\Projects\VP Assignment 01\VP Assignment 01\bin\Debug\VP Assignment 01.exe
-c:\users\adeel\documents\visual studio 2013\Projects\VP Assignment 01\VP Assignment 01\bin\Debug\VP Assignment 01.pdb
-c:\users\adeel\documents\visual studio 2013\Projects\VP Assignment 01\VP Assignment 01\obj\Debug\VP Assignment 01.exe
-c:\users\adeel\documents\visual studio 2013\Projects\VP Assignment 01\VP Assignment 01\obj\Debug\VP Assignment 01.pdb
-c:\users\adeel\documents\visual studio 2013\Projects\VP Assignment 01\VP Assignment 01\obj\Debug\VP Assignment 01.csprojResolveAssemblyReference.cache

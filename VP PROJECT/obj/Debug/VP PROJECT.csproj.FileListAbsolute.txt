@@ -1,0 +1,3 @@
+C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\bin\Debug\Project.exe.config
+C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\Project.exe
+C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\Project.pdb

@@ -1,0 +1,6 @@
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Indexer\Practice Indexer\bin\Debug\Practice Indexer.exe.config
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Indexer\Practice Indexer\bin\Debug\Practice Indexer.exe
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Indexer\Practice Indexer\bin\Debug\Practice Indexer.pdb
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Indexer\Practice Indexer\obj\Debug\Practice Indexer.csprojResolveAssemblyReference.cache
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Indexer\Practice Indexer\obj\Debug\Practice Indexer.exe
+c:\users\adeel\documents\visual studio 2013\Projects\Practice Indexer\Practice Indexer\obj\Debug\Practice Indexer.pdb

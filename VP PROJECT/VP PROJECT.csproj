@@ -50,6 +50,12 @@
     <Compile Include="fmMain.Designer.cs">
       <DependentUpon>fmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmResult.Designer.cs">
+      <DependentUpon>fmResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Keyboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fmMain.resx">
       <DependentUpon>fmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmResult.resx">
+      <DependentUpon>fmResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Keyboard.resx">
       <DependentUpon>Keyboard.cs</DependentUpon>

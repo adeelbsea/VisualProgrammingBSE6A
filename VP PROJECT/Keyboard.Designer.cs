@@ -28,25 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmKeyboard));
             this.lblTopText = new System.Windows.Forms.Label();
             this.richTxt = new System.Windows.Forms.RichTextBox();
             this.lblRemTime = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             this.txtInput = new System.Windows.Forms.TextBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblTopText
             // 
             this.lblTopText.AutoSize = true;
-            this.lblTopText.Location = new System.Drawing.Point(99, 28);
+            this.lblTopText.BackColor = System.Drawing.Color.Transparent;
+            this.lblTopText.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTopText.Location = new System.Drawing.Point(98, 22);
             this.lblTopText.Name = "lblTopText";
-            this.lblTopText.Size = new System.Drawing.Size(114, 13);
+            this.lblTopText.Size = new System.Drawing.Size(235, 24);
             this.lblTopText.TabIndex = 0;
             this.lblTopText.Text = "Test your typing speed";
             // 
             // richTxt
             // 
+            this.richTxt.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTxt.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.richTxt.Location = new System.Drawing.Point(102, 63);
             this.richTxt.Name = "richTxt";
             this.richTxt.Size = new System.Drawing.Size(700, 255);
@@ -56,40 +63,53 @@
             // lblRemTime
             // 
             this.lblRemTime.AutoSize = true;
-            this.lblRemTime.Location = new System.Drawing.Point(285, 344);
+            this.lblRemTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblRemTime.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblRemTime.Location = new System.Drawing.Point(292, 346);
             this.lblRemTime.Name = "lblRemTime";
-            this.lblRemTime.Size = new System.Drawing.Size(89, 13);
+            this.lblRemTime.Size = new System.Drawing.Size(237, 33);
             this.lblRemTime.TabIndex = 2;
             this.lblRemTime.Text = "Time Remaining: ";
             // 
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(404, 344);
+            this.lblTimer.BackColor = System.Drawing.Color.Transparent;
+            this.lblTimer.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTimer.Location = new System.Drawing.Point(525, 346);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(24, 13);
+            this.lblTimer.Size = new System.Drawing.Size(62, 33);
             this.lblTimer.TabIndex = 3;
-            this.lblTimer.Text = "60s";
+            this.lblTimer.Text = "60 s";
             // 
             // txtInput
             // 
             this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInput.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtInput.Location = new System.Drawing.Point(278, 377);
+            this.txtInput.Location = new System.Drawing.Point(281, 394);
             this.txtInput.Margin = new System.Windows.Forms.Padding(5);
             this.txtInput.MaxLength = 30;
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(330, 20);
+            this.txtInput.Size = new System.Drawing.Size(329, 30);
             this.txtInput.TabIndex = 0;
             this.txtInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // fmKeyboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.txtInput);
@@ -100,6 +120,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fmKeyboard";
             this.Text = "Typing Speed Test";
+            this.Load += new System.EventHandler(this.fmKeyboard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,5 +133,6 @@
         private System.Windows.Forms.Label lblRemTime;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.TextBox txtInput;
+        private System.Windows.Forms.Timer timer;
     }
 }

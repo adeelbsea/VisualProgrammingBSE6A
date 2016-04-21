@@ -23,7 +23,17 @@ namespace Project
 
         int index = 0;
 
-        int time = 6;
+        int time = 10;
+
+        int keyStrokes = 0;
+
+        int correctStrokes = 0;
+
+        int wrongStrokes = 0;
+
+        int traverseString = 0;
+
+        int traverseWord = 0;
 
         public fmKeyboard()
         {
@@ -56,6 +66,52 @@ namespace Project
 
             lblTimer.Text = time.ToString();
             lblTimer.Text = lblTimer.Text + " s";
+        }
+
+        private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            keyStrokes++;
+
+            if (e.KeyChar == Txt[traverseString])
+            {
+                correctStrokes++;
+            }
+            else
+            {
+                wrongStrokes++;
+            }
+
+            label1.Text = "Traverse text = " + Txt[traverseString].ToString();
+            label1.Visible = true;
+            label2.Text = "Char Text = " + e.KeyChar.ToString();
+            label2.Visible = true;
+            label4.Text = "Correct = " + correctStrokes.ToString();
+            label4.Visible = true;
+            label6.Text = "Words = " + traverseWord.ToString();
+            label6.Visible = true;
+            label8.Text = "Traverse Lenght = " + inputString[spaces].Length.ToString();
+            label8.Visible = true;
+            if (traverseWord <= inputString[spaces].Length)
+            {
+                if (e.KeyChar != 8)
+                {
+                    traverseString++;
+                }
+            }
+
+
+            string inputText = "";
+
+            if(e.KeyChar == 32)
+            {
+                traverseWord = 1;
+                inputText = txtInput.Text.Trim().ToString();
+                txtInput.Text = "";
+               
+                richTxt.Find(inputString[spaces + 1], index, richTxt.TextLength, RichTextBoxFinds.WholeWord);
+                richTxt.SelectionBackColor = Color.Yellow;
+            }
         }
     }
 }

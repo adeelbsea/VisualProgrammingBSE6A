@@ -70,6 +70,7 @@
             this.Controls.Add(this.lblWlcm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Typing Speed Test";
             this.ResumeLayout(false);
             this.PerformLayout();

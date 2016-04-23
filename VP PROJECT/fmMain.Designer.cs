@@ -69,6 +69,7 @@
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.lblWlcm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "fmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Typing Speed Test";

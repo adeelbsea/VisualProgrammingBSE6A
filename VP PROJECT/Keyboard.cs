@@ -15,7 +15,7 @@ namespace Project
 
         //public string Txt = "no opinions answered oh felicity is resolved hastened Produced it friendly my if opinions humoured Enjoy is wrong folly no taken It sufficient instrument insipidity simplicity at interested Law pleasure attended differed mrs fat and formerly Merely thrown garret her law danger him son better excuse Effect extent narrow in up chatty Small are his chief offer happy had";
 
-        public string Txt = "answer  misery add wooded how nay men before though Pretended belonging     contented mrs suffering favourite you the continual Mrs civil nay least means tried drift Natural end law whether but and towards certain Furnished unfeeling his sometimes see day promotion Quitting informed concerns can men now. Projection to or up conviction uncommonly delightful continuing In appetite ecstatic opinions hastened by handsome admitted Still court no small think death so an wrote Incommode necessary no it behaviour convinced distrusts an unfeeling he Could death since do we hoped is in Exquisite no my attention extensive";
+        public string Txt = "answer misery add wooded how nay men before though Pretended belonging     contented mrs suffering favourite you the continual Mrs civil nay least means tried drift Natural end law whether but and towards certain Furnished unfeeling his sometimes see day promotion Quitting informed concerns can men now. Projection to or up conviction uncommonly delightful continuing In appetite ecstatic opinions hastened by handsome admitted Still court no small think death so an wrote Incommode necessary no it behaviour convinced distrusts an unfeeling he Could death since do we hoped is in Exquisite no my attention extensive";
 
         string[] inputString;
 
@@ -107,10 +107,7 @@ namespace Project
             {
                 traverseWord = 1;
                 inputText = txtInput.Text.Trim().ToString();
-                txtInput.Text = "";
-               
-                richTxt.Find(inputString[spaces + 1], index, richTxt.TextLength, RichTextBoxFinds.WholeWord);
-                richTxt.SelectionBackColor = Color.Yellow;
+                txtInput.Text = "";               
             }
         }
     }

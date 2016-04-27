@@ -60,6 +60,7 @@
             // 
             // richTxt
             // 
+            this.richTxt.BackColor = System.Drawing.SystemColors.Window;
             this.richTxt.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTxt.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.richTxt.Location = new System.Drawing.Point(102, 63);

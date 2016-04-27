@@ -23,6 +23,12 @@ namespace Project
 
         int index = 0;
 
+        int forecolor_index = 0;
+
+        int correctWords = 0;
+
+        int wrongWords = 0;
+
         int time = 10;
 
         int keyStrokes = 0;
@@ -34,6 +40,8 @@ namespace Project
         int traverseString = 0;
 
         int traverseWord = 0;
+
+        int cleanBackColor = 0;
 
         public fmKeyboard()
         {
@@ -90,8 +98,9 @@ namespace Project
             label4.Visible = true;
             label6.Text = "Words = " + traverseWord.ToString();
             label6.Visible = true;
-            label8.Text = "Traverse Lenght = " + inputString[spaces].Length.ToString();
+            label8.Text = "Traverse Length = " + inputString[spaces].Length.ToString();
             label8.Visible = true;
+
             if (traverseWord <= inputString[spaces].Length)
             {
                 if (e.KeyChar != 8)
@@ -107,7 +116,50 @@ namespace Project
             {
                 traverseWord = 1;
                 inputText = txtInput.Text.Trim().ToString();
-                txtInput.Text = "";               
+
+                if (index < richTxt.TextLength)
+                {
+                    richTxt.Find(inputString[spaces + 1], index, richTxt.TextLength, RichTextBoxFinds.WholeWord);
+                    richTxt.SelectionBackColor = Color.Yellow;
+                    index = richTxt.Text.IndexOf(inputString[spaces + 1], index) + 2;
+                } //ENDIF
+
+
+                if (inputText == inputString[spaces])
+                {
+                    
+                    if(index < richTxt.TextLength)
+                    {
+                        richTxt.Find(inputString[spaces], forecolor_index, richTxt.TextLength, RichTextBoxFinds.WholeWord);
+                        richTxt.SelectionColor = Color.Green;
+                        forecolor_index = richTxt.Text.IndexOf(inputString[spaces], forecolor_index) + 2;
+
+                        correctWords++;
+                    } 
+
+                } 
+
+                else
+                {
+                    if (forecolor_index < richTxt.TextLength)
+                    {
+                        richTxt.Find(inputString[spaces], forecolor_index, richTxt.TextLength, RichTextBoxFinds.WholeWord);
+                        richTxt.SelectionColor = Color.Red;
+                    }
+
+                    wrongWords++;
+                }
+
+                spaces++;
+
+                //if (cleanBackColor < richTxt.TextLength)
+                //{
+                //    richTxt.Find(inputString[spaces], cleanBackColor, richTxt.TextLength, RichTextBoxFinds.WholeWord);
+                //    richTxt.
+                //}
+
+                txtInput.Clear();
+
             }
         }
     }

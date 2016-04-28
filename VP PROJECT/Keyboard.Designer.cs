@@ -44,6 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnRestart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTopText
@@ -217,13 +218,28 @@
             this.label8.Text = "Test";
             this.label8.Visible = false;
             // 
+            // btnRestart
+            // 
+            this.btnRestart.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestart.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRestart.Location = new System.Drawing.Point(403, 442);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(98, 34);
+            this.btnRestart.TabIndex = 4;
+            this.btnRestart.Text = "Restart";
+            this.btnRestart.UseVisualStyleBackColor = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
             // fmKeyboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(884, 488);
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.lblRemTime);
@@ -242,6 +258,7 @@
             this.Name = "fmKeyboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Typing Speed Test";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fmKeyboard_FormClosed);
             this.Load += new System.EventHandler(this.fmKeyboard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -264,5 +281,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnRestart;
     }
 }

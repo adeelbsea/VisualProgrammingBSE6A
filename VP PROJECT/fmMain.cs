@@ -24,8 +24,9 @@ namespace Project
 
         private void btnKeyboard_Click(object sender, EventArgs e)
         {
-            fmKeyboard ob = new fmKeyboard();
-            ob.ShowDialog();
+            this.Hide();
+            fmSettings ob = new fmSettings();
+            ob.Show();
         }
     }
 }

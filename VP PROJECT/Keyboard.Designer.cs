@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmKeyboard));
-            this.lblTopText = new System.Windows.Forms.Label();
             this.richTxt = new System.Windows.Forms.RichTextBox();
             this.lblRemTime = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
@@ -44,27 +43,24 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnRestart = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.lblTopText = new System.Windows.Forms.Label();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolBtnStart = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolBtnSettings = new System.Windows.Forms.ToolStripButton();
+            this.pbStart = new System.Windows.Forms.PictureBox();
+            this.toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStart)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTopText
-            // 
-            this.lblTopText.AutoSize = true;
-            this.lblTopText.BackColor = System.Drawing.Color.Transparent;
-            this.lblTopText.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTopText.Location = new System.Drawing.Point(98, 22);
-            this.lblTopText.Name = "lblTopText";
-            this.lblTopText.Size = new System.Drawing.Size(235, 24);
-            this.lblTopText.TabIndex = 0;
-            this.lblTopText.Text = "Test your typing speed";
             // 
             // richTxt
             // 
             this.richTxt.BackColor = System.Drawing.SystemColors.Window;
             this.richTxt.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTxt.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.richTxt.Location = new System.Drawing.Point(102, 63);
+            this.richTxt.Location = new System.Drawing.Point(106, 90);
+            this.richTxt.MaxLength = 1000;
             this.richTxt.Name = "richTxt";
             this.richTxt.ReadOnly = true;
             this.richTxt.Size = new System.Drawing.Size(700, 255);
@@ -77,11 +73,12 @@
             this.lblRemTime.BackColor = System.Drawing.Color.Transparent;
             this.lblRemTime.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRemTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblRemTime.Location = new System.Drawing.Point(292, 346);
+            this.lblRemTime.Location = new System.Drawing.Point(311, 374);
             this.lblRemTime.Name = "lblRemTime";
             this.lblRemTime.Size = new System.Drawing.Size(237, 33);
             this.lblRemTime.TabIndex = 2;
             this.lblRemTime.Text = "Time Remaining: ";
+            this.lblRemTime.Visible = false;
             // 
             // lblTimer
             // 
@@ -89,11 +86,12 @@
             this.lblTimer.BackColor = System.Drawing.Color.Transparent;
             this.lblTimer.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTimer.Location = new System.Drawing.Point(525, 346);
+            this.lblTimer.Location = new System.Drawing.Point(544, 374);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(62, 33);
             this.lblTimer.TabIndex = 3;
             this.lblTimer.Text = "60 s";
+            this.lblTimer.Visible = false;
             // 
             // txtInput
             // 
@@ -103,13 +101,15 @@
             this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInput.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtInput.Location = new System.Drawing.Point(281, 394);
+            this.txtInput.Location = new System.Drawing.Point(300, 422);
             this.txtInput.Margin = new System.Windows.Forms.Padding(5);
             this.txtInput.MaxLength = 30;
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(329, 30);
-            this.txtInput.TabIndex = 0;
+            this.txtInput.ReadOnly = true;
+            this.txtInput.Size = new System.Drawing.Size(306, 30);
+            this.txtInput.TabIndex = 1;
             this.txtInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtInput.Visible = false;
             this.txtInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput_KeyPress);
             // 
             // timer
@@ -218,19 +218,77 @@
             this.label8.Text = "Test";
             this.label8.Visible = false;
             // 
-            // btnRestart
+            // openFileDialog
             // 
-            this.btnRestart.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestart.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRestart.Location = new System.Drawing.Point(403, 442);
-            this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(98, 34);
-            this.btnRestart.TabIndex = 4;
-            this.btnRestart.Text = "Restart";
-            this.btnRestart.UseVisualStyleBackColor = false;
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // lblTopText
+            // 
+            this.lblTopText.AutoSize = true;
+            this.lblTopText.BackColor = System.Drawing.Color.Transparent;
+            this.lblTopText.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTopText.Location = new System.Drawing.Point(102, 48);
+            this.lblTopText.Name = "lblTopText";
+            this.lblTopText.Size = new System.Drawing.Size(241, 24);
+            this.lblTopText.TabIndex = 0;
+            this.lblTopText.Text = "Test your typing speed ";
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.AutoSize = false;
+            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolBtnStart,
+            this.toolStripSeparator,
+            this.toolBtnSettings});
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip.Size = new System.Drawing.Size(920, 29);
+            this.toolStrip.TabIndex = 4;
+            this.toolStrip.Text = "toolStrip";
+            // 
+            // toolBtnStart
+            // 
+            this.toolBtnStart.AutoSize = false;
+            this.toolBtnStart.Image = ((System.Drawing.Image)(resources.GetObject("toolBtnStart.Image")));
+            this.toolBtnStart.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnStart.Name = "toolBtnStart";
+            this.toolBtnStart.Size = new System.Drawing.Size(70, 35);
+            this.toolBtnStart.Text = "Start";
+            this.toolBtnStart.Click += new System.EventHandler(this.toolBtnStart_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.AutoSize = false;
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 38);
+            // 
+            // toolBtnSettings
+            // 
+            this.toolBtnSettings.AutoSize = false;
+            this.toolBtnSettings.Image = ((System.Drawing.Image)(resources.GetObject("toolBtnSettings.Image")));
+            this.toolBtnSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnSettings.Name = "toolBtnSettings";
+            this.toolBtnSettings.Size = new System.Drawing.Size(77, 35);
+            this.toolBtnSettings.Text = "Settings";
+            this.toolBtnSettings.Click += new System.EventHandler(this.toolBtnSettings_Click);
+            // 
+            // pbStart
+            // 
+            this.pbStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbStart.Image = ((System.Drawing.Image)(resources.GetObject("pbStart.Image")));
+            this.pbStart.Location = new System.Drawing.Point(444, 452);
+            this.pbStart.Name = "pbStart";
+            this.pbStart.Size = new System.Drawing.Size(61, 54);
+            this.pbStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStart.TabIndex = 5;
+            this.pbStart.TabStop = false;
+            this.pbStart.Tag = "";
+            this.pbStart.Click += new System.EventHandler(this.pbStart_Click);
+            this.pbStart.MouseEnter += new System.EventHandler(this.pbStart_MouseEnter);
+            this.pbStart.MouseLeave += new System.EventHandler(this.pbStart_MouseLeave);
             // 
             // fmKeyboard
             // 
@@ -238,8 +296,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(884, 488);
-            this.Controls.Add(this.btnRestart);
+            this.ClientSize = new System.Drawing.Size(920, 526);
+            this.Controls.Add(this.pbStart);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.lblRemTime);
@@ -251,8 +310,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTopText);
+            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "fmKeyboard";
@@ -260,6 +319,9 @@
             this.Text = "Typing Speed Test";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fmKeyboard_FormClosed);
             this.Load += new System.EventHandler(this.fmKeyboard_Load);
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,7 +329,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblTopText;
         private System.Windows.Forms.RichTextBox richTxt;
         private System.Windows.Forms.Label lblRemTime;
         private System.Windows.Forms.Label lblTimer;
@@ -281,6 +342,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnRestart;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label lblTopText;
+        private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStripButton toolBtnSettings;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripButton toolBtnStart;
+        private System.Windows.Forms.PictureBox pbStart;
     }
 }

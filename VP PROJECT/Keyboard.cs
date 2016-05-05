@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,11 @@ namespace Project
     public partial class fmKeyboard : Form
     {
 
-        //public string Txt = "no opinions answered oh felicity is resolved hastened Produced it friendly my if opinions humoured Enjoy is wrong folly no taken It sufficient instrument insipidity simplicity at interested Law pleasure attended differed mrs fat and formerly Merely thrown garret her law danger him son better excuse Effect extent narrow in up chatty Small are his chief offer happy had ";
-
-        public string Txt = "answer misery add wooded how nay men before though Pretended belonging contented mrs suffering favourite you the continual Mrs civil nay least means tried drift Natural end law whether but and towards certain Furnished unfeeling his sometimes see day promotion Quitting informed concerns can men now. Projection to or up conviction uncommonly delightful continuing In appetite ecstatic opinions hastened by handsome admitted Still court no small think death so an wrote Incommode necessary no it behaviour convinced distrusts an unfeeling he Could death since do we hoped is in Exquisite no my attention extensive ";
-
         //public string Txt = "Adeel nawaz bse ";
+
+        //public string Txt = "";
+
+        string Txt;
 
         string[] inputString;
 
@@ -31,7 +32,7 @@ namespace Project
 
         int wrongWords = 0;
 
-        int time = 10;
+        int time = 60;
 
         int keyStrokes = 0;
 
@@ -45,22 +46,25 @@ namespace Project
 
         int cleanBackColor = 0;
 
-        public fmKeyboard()
+        public fmKeyboard(string selectedText, int selectedTime)
         {
             InitializeComponent();
+            Txt = selectedText;
+            time = selectedTime;
         }
 
         private void fmKeyboard_Load(object sender, EventArgs e)
         {
-            timer.Start();
-
             richTxt.Text = Txt;
 
             inputString = Txt.Split(' '); //to seperate all words
 
             richTxt.Find(inputString[spaces], index, richTxt.TextLength, RichTextBoxFinds.WholeWord);
             richTxt.SelectionBackColor = Color.Yellow;
+
+            lblTimer.Text = time.ToString() + " s";
         }
+
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -94,24 +98,24 @@ namespace Project
                    wrongStrokes++;
                }
 
-               label1.Text = "Traverse text = " + Txt[traverseString].ToString();
-               label1.Visible = true;
-               label2.Text = "Char Text = " + e.KeyChar.ToString();
-               label2.Visible = true;
-               label4.Text = "Correct = " + correctStrokes.ToString();
-               label4.Visible = true;
-               label6.Text = "Words = " + traverseWord.ToString();
-               label6.Visible = true;
-               label8.Text = "Traverse Length = " + inputString[spaces].Length.ToString();
-               label8.Visible = true;
+               //label1.Text = "Traverse text = " + Txt[traverseString].ToString();
+               //label1.Visible = true;
+               //label2.Text = "Char Text = " + e.KeyChar.ToString();
+               //label2.Visible = true;
+               //label4.Text = "Correct = " + correctStrokes.ToString();
+               //label4.Visible = true;
+               //label6.Text = "Words = " + traverseWord.ToString();
+               //label6.Visible = true;
+               //label8.Text = "Traverse Length = " + inputString[spaces].Length.ToString();
+               //label8.Visible = true;
 
-               if (traverseWord <= inputString[spaces].Length)
-               {
-                   if (e.KeyChar != 8)
-                   {
-                       traverseString++;
-                   }
-               }
+               //if (traverseWord <= inputString[spaces].Length)
+               //{
+               //    if (e.KeyChar != 8)
+               //    {
+               //        traverseString++;
+               //    }
+               //}
 
 
                string inputText = "";
@@ -179,12 +183,89 @@ namespace Project
             timer.Stop();
         }
 
-        private void btnRestart_Click(object sender, EventArgs e)
+
+        private void btnStart_Click(object sender, EventArgs e)
         {
-            this.Close();
-            timer.Stop();
-            fmKeyboard ob = new fmKeyboard();
-            ob.ShowDialog();
+                timer.Start();
+                //btnStart.Visible = false;
+                pbStart.Visible = false;
+                txtInput.ReadOnly = false;
+                txtInput.Visible = true;
+                lblRemTime.Visible = true;
+                lblTimer.Visible = true;
+                txtInput.Focus();
+                toolBtnStart.Text = "Restart";
+                toolBtnStart.Image = Bitmap.FromFile("C:\\Users\\Adeel\\Documents\\Visual Studio 2013\\Projects\\VP PROJECT\\VP PROJECT\\Images\\Restart.png");
         }
+
+        private void toolBtnSettings_Click(object sender, EventArgs e)
+        {
+            if (toolBtnStart.Text == "Start")
+            {
+                this.Hide();
+                timer.Stop();
+                fmSettings ob = new fmSettings();
+                ob.Show();
+            }
+
+            else if (toolBtnStart.Text == "Restart")
+            {
+                DialogResult dialogResult = MessageBox.Show("Testing in progress! Do you want to stop it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    timer.Stop();
+                    this.Hide();
+                    fmSettings ob = new fmSettings();
+                    ob.Show();
+                }
+            }
+        }
+
+        private void toolBtnStart_Click(object sender, EventArgs e)
+        {
+            if (toolBtnStart.Text == "Start")
+            {
+                btnStart_Click(sender, e);
+                return;
+            }
+
+            if (toolBtnStart.Text == "Restart")
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to restart the test?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    timer.Stop();
+                    this.Hide();
+                    fmKeyboard ob = new fmKeyboard(Txt, time);
+                    ob.Show();
+                }
+            }
+        }
+
+        private void pbStart_Click(object sender, EventArgs e)
+        {
+            timer.Start();
+            pbStart.Visible = false;
+            txtInput.ReadOnly = false;
+            txtInput.Visible = true;
+            lblRemTime.Visible = true;
+            lblTimer.Visible = true;
+            txtInput.Focus();
+            toolBtnStart.Text = "Restart";
+            toolBtnStart.Image = Bitmap.FromFile("C:\\Users\\Adeel\\Documents\\Visual Studio 2013\\Projects\\VP PROJECT\\VP PROJECT\\Images\\Restart.png");
+        }
+
+        private void pbStart_MouseEnter(object sender, EventArgs e)
+        {
+            pbStart.Size = new Size(70, 62);
+        }
+
+        private void pbStart_MouseLeave(object sender, EventArgs e)
+        {
+            pbStart.Size = new Size(61, 54);
+        }
+        
     }
 }

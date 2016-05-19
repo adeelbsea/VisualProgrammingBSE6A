@@ -65,7 +65,7 @@
             this.btnDone.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDone.Location = new System.Drawing.Point(217, 150);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(79, 42);
+            this.btnDone.Size = new System.Drawing.Size(79, 33);
             this.btnDone.TabIndex = 8;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = false;
@@ -126,7 +126,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(490, 206);
+            this.ClientSize = new System.Drawing.Size(490, 196);
             this.Controls.Add(this.setTimer);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.lblFileName);

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.lblWlcm = new System.Windows.Forms.Label();
             this.btnKeyboard = new System.Windows.Forms.Button();
+            this.lblAbout = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblWlcm
@@ -61,6 +62,20 @@
             this.btnKeyboard.MouseEnter += new System.EventHandler(this.btnKeyboard_MouseEnter);
             this.btnKeyboard.MouseLeave += new System.EventHandler(this.btnKeyboard_MouseLeave);
             // 
+            // lblAbout
+            // 
+            this.lblAbout.AutoSize = true;
+            this.lblAbout.BackColor = System.Drawing.Color.Transparent;
+            this.lblAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAbout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbout.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblAbout.Location = new System.Drawing.Point(590, 408);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(54, 20);
+            this.lblAbout.TabIndex = 3;
+            this.lblAbout.Text = "About";
+            this.lblAbout.Click += new System.EventHandler(this.lblAbout_Click);
+            // 
             // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -68,6 +83,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(672, 438);
+            this.Controls.Add(this.lblAbout);
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.lblWlcm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -84,5 +100,6 @@
 
         private System.Windows.Forms.Label lblWlcm;
         private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Label lblAbout;
     }
 }

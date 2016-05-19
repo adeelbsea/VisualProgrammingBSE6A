@@ -38,5 +38,11 @@ namespace Project
         {
             btnKeyboard.BackColor = Color.GhostWhite;
         }
+
+        private void lblAbout_Click(object sender, EventArgs e)
+        {
+            fmAbout ob = new fmAbout();
+            ob.ShowDialog();
+        }
     }
 }

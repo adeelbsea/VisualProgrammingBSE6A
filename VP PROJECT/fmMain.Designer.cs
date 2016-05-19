@@ -47,7 +47,7 @@
             // 
             // btnKeyboard
             // 
-            this.btnKeyboard.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnKeyboard.BackColor = System.Drawing.Color.GhostWhite;
             this.btnKeyboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -58,6 +58,8 @@
             this.btnKeyboard.Text = "Start";
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            this.btnKeyboard.MouseEnter += new System.EventHandler(this.btnKeyboard_MouseEnter);
+            this.btnKeyboard.MouseLeave += new System.EventHandler(this.btnKeyboard_MouseLeave);
             // 
             // fmMain
             // 

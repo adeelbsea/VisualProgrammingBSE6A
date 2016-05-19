@@ -16,7 +16,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new fmKeyboard("Adeel nawaz ", 20));
+            //Application.Run(new fmKeyboard("Adeel nawaz ", 5));
             Application.Run(new fmMain());
         }
     }

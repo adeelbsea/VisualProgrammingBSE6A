@@ -28,5 +28,15 @@ namespace Project
             fmSettings ob = new fmSettings();
             ob.Show();
         }
+
+        private void btnKeyboard_MouseEnter(object sender, EventArgs e)
+        {
+            btnKeyboard.BackColor = Color.AliceBlue;
+        }
+
+        private void btnKeyboard_MouseLeave(object sender, EventArgs e)
+        {
+            btnKeyboard.BackColor = Color.GhostWhite;
+        }
     }
 }

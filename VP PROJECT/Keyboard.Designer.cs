@@ -50,6 +50,7 @@
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolBtnSettings = new System.Windows.Forms.ToolStripButton();
             this.pbStart = new System.Windows.Forms.PictureBox();
+            this.toolTipStart = new System.Windows.Forms.ToolTip(this.components);
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStart)).BeginInit();
             this.SuspendLayout();
@@ -125,9 +126,8 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(12, 334);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 24);
+            this.label1.Size = new System.Drawing.Size(0, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Test";
             this.label1.Visible = false;
             // 
             // label2
@@ -138,9 +138,8 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(14, 359);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 24);
+            this.label2.Size = new System.Drawing.Size(0, 24);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Test";
             this.label2.Visible = false;
             // 
             // label3
@@ -163,9 +162,8 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(14, 383);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 24);
+            this.label4.Size = new System.Drawing.Size(0, 24);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Test";
             this.label4.Visible = false;
             // 
             // label5
@@ -188,9 +186,8 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(14, 407);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 24);
+            this.label6.Size = new System.Drawing.Size(0, 24);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Test";
             this.label6.Visible = false;
             // 
             // label7
@@ -213,9 +210,8 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label8.Location = new System.Drawing.Point(14, 431);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 24);
+            this.label8.Size = new System.Drawing.Size(0, 24);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Test";
             this.label8.Visible = false;
             // 
             // openFileDialog
@@ -286,6 +282,7 @@
             this.pbStart.TabIndex = 5;
             this.pbStart.TabStop = false;
             this.pbStart.Tag = "";
+            this.toolTipStart.SetToolTip(this.pbStart, "Start");
             this.pbStart.Click += new System.EventHandler(this.pbStart_Click);
             this.pbStart.MouseEnter += new System.EventHandler(this.pbStart_MouseEnter);
             this.pbStart.MouseLeave += new System.EventHandler(this.pbStart_MouseLeave);
@@ -349,5 +346,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripButton toolBtnStart;
         private System.Windows.Forms.PictureBox pbStart;
+        private System.Windows.Forms.ToolTip toolTipStart;
     }
 }

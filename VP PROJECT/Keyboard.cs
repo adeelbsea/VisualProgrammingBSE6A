@@ -28,6 +28,8 @@ namespace Project
 
         int forecolor_index = 0;
 
+        int totalWords = 0;
+
         int correctWords = 0;
 
         int wrongWords = 0;
@@ -46,11 +48,18 @@ namespace Project
 
         int cleanBackColor = 0;
 
+        int WCPM = 0;
+
+        int totalSeconds = 1;
+
+        int accuracy = 0;
+
         public fmKeyboard(string selectedText, int selectedTime)
         {
             InitializeComponent();
             Txt = selectedText;
             time = selectedTime;
+            totalSeconds = selectedTime;
         }
 
         private void fmKeyboard_Load(object sender, EventArgs e)
@@ -58,6 +67,11 @@ namespace Project
             richTxt.Text = Txt;
 
             inputString = Txt.Split(' '); //to seperate all words
+
+            foreach (string item in inputString)
+            {
+                totalWords++;
+            }
 
             richTxt.Find(inputString[spaces], index, richTxt.TextLength, RichTextBoxFinds.WholeWord);
             richTxt.SelectionBackColor = Color.Yellow;
@@ -74,8 +88,26 @@ namespace Project
             {
                 timer.Stop();
 
-                fmResult obResult = new fmResult();
+                WCPM = Convert.ToInt16((Convert.ToDouble(correctWords) / Convert.ToDouble(totalSeconds)) * 60); //Correct words per minute
+
+                if (wrongWords != 0)
+                {
+                    accuracy = Convert.ToInt16((Convert.ToDouble(correctWords) / Convert.ToInt16(correctWords + wrongWords)) * 100);
+                }
+                else if (wrongWords == 0 && correctWords == 0)
+                {
+                    accuracy = 0;
+                }
+                else
+                {
+                    accuracy = 100;
+                }
+
+                fmResult obResult = new fmResult(keyStrokes, correctWords, wrongWords, accuracy, WCPM);
                 obResult.ShowDialog();
+
+                txtInput.Text = "";
+                txtInput.ReadOnly = true;
             }
 
             lblTimer.Text = time.ToString();
@@ -98,25 +130,26 @@ namespace Project
                    wrongStrokes++;
                }
 
-               //label1.Text = "Traverse text = " + Txt[traverseString].ToString();
-               //label1.Visible = true;
-               //label2.Text = "Char Text = " + e.KeyChar.ToString();
-               //label2.Visible = true;
-               //label4.Text = "Correct = " + correctStrokes.ToString();
-               //label4.Visible = true;
-               //label6.Text = "Words = " + traverseWord.ToString();
-               //label6.Visible = true;
-               //label8.Text = "Traverse Length = " + inputString[spaces].Length.ToString();
-               //label8.Visible = true;
+               /*
+               label1.Text = "Traverse text = " + Txt[traverseString].ToString();
+               label1.Visible = true;
+               label2.Text = "Char Text = " + e.KeyChar.ToString();
+               label2.Visible = true;
+               label4.Text = "Correct = " + correctStrokes.ToString();
+               label4.Visible = true;
+               label6.Text = "Words = " + traverseWord.ToString();
+               label6.Visible = true;
+               label8.Text = "Traverse Length = " + inputString[spaces].Length.ToString();
+               label8.Visible = true;
 
-               //if (traverseWord <= inputString[spaces].Length)
-               //{
-               //    if (e.KeyChar != 8)
-               //    {
-               //        traverseString++;
-               //    }
-               //}
-
+               if (traverseWord <= inputString[spaces].Length)
+               {
+                   if (e.KeyChar != 8)
+                   {
+                       traverseString++;
+                   }
+               }
+               */
 
                string inputText = "";
 
@@ -156,6 +189,8 @@ namespace Project
                            richTxt.SelectionColor = Color.Red;
                        }
 
+                       traverseString = index;
+
                        wrongWords++;
                    }
 
@@ -174,7 +209,12 @@ namespace Project
            }
             catch (Exception)
            {
-               MessageBox.Show("Words out of bound");
+               MessageBox.Show("Words out of bound", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+               this.Hide();
+               timer.Stop();
+               fmResult obResult = new fmResult(keyStrokes, correctWords, wrongWords, accuracy, WCPM);
+               obResult.ShowDialog();
            }
         }
 
@@ -187,7 +227,6 @@ namespace Project
         private void btnStart_Click(object sender, EventArgs e)
         {
                 timer.Start();
-                //btnStart.Visible = false;
                 pbStart.Visible = false;
                 txtInput.ReadOnly = false;
                 txtInput.Visible = true;
@@ -210,9 +249,19 @@ namespace Project
 
             else if (toolBtnStart.Text == "Restart")
             {
-                DialogResult dialogResult = MessageBox.Show("Testing in progress! Do you want to stop it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (time != 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Testing in progress! Do you want to stop it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (dialogResult == DialogResult.Yes)
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        timer.Stop();
+                        this.Hide();
+                        fmSettings ob = new fmSettings();
+                        ob.Show();
+                    }
+                }
+                else
                 {
                     timer.Stop();
                     this.Hide();
@@ -238,7 +287,7 @@ namespace Project
                 {
                     timer.Stop();
                     this.Hide();
-                    fmKeyboard ob = new fmKeyboard(Txt, time);
+                    fmSettings ob = new fmSettings();
                     ob.Show();
                 }
             }

@@ -24,7 +24,35 @@ namespace Project
             InitializeComponent();
         }
 
-        private void btnOpenFile_Click(object sender, EventArgs e)
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            if (Txt == "")
+            {
+               DialogResult dialogResult = MessageBox.Show("Do you want to continue with the Default Text?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+               if (dialogResult == DialogResult.Yes)
+               {
+                   this.Hide();
+                   fmKeyboard ob = new fmKeyboard(defaultText, time);
+                   ob.Show();
+               }
+                else
+               {
+                   lblFileName.Text = "No file selected";
+                   lblFileName.ForeColor = Color.Red;
+               }
+            }
+
+            else
+            {
+                this.Hide();
+                fmKeyboard ob = new fmKeyboard(Txt, time);
+                ob.Show();
+            }
+        }
+
+        private void btnOpenFile_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog openFD = new OpenFileDialog();
             openFD.Multiselect = false;
@@ -58,46 +86,10 @@ namespace Project
             }
         }
 
-        private void setTimer_ValueChanged(object sender, EventArgs e)
+        private void setTimer_ValueChanged_1(object sender, EventArgs e)
         {
             time = Int16.Parse(setTimer.Value.ToString());
         }
 
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-            if (Txt == "")
-            {
-               DialogResult dialogResult = MessageBox.Show("Do you want to continue with the Default Text?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-               if (dialogResult == DialogResult.Yes)
-               {
-                   this.Hide();
-                   fmKeyboard ob = new fmKeyboard(defaultText, time);
-                   ob.Show();
-               }
-                else
-               {
-                   lblFileName.Text = "No file selected";
-                   lblFileName.ForeColor = Color.Red;
-               }
-            }
-
-            else
-            {
-                this.Hide();
-                fmKeyboard ob = new fmKeyboard(Txt, time);
-                ob.Show();
-            }
-        }
-
-        private void btnDone_MouseLeave(object sender, EventArgs e)
-        {
-            btnDone.BackColor = Color.LightYellow;
-        }
-
-        private void btnDone_MouseEnter(object sender, EventArgs e)
-        {
-            btnDone.BackColor = Color.AliceBlue;
-        }
     }
 }

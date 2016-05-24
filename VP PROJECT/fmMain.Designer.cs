@@ -52,9 +52,9 @@
             this.btnKeyboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnKeyboard.Location = new System.Drawing.Point(292, 234);
+            this.btnKeyboard.Location = new System.Drawing.Point(306, 164);
             this.btnKeyboard.Name = "btnKeyboard";
-            this.btnKeyboard.Size = new System.Drawing.Size(122, 94);
+            this.btnKeyboard.Size = new System.Drawing.Size(101, 60);
             this.btnKeyboard.TabIndex = 2;
             this.btnKeyboard.Text = "Start";
             this.btnKeyboard.UseVisualStyleBackColor = false;
@@ -69,7 +69,7 @@
             this.lblAbout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAbout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbout.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblAbout.Location = new System.Drawing.Point(590, 408);
+            this.lblAbout.Location = new System.Drawing.Point(595, 294);
             this.lblAbout.Name = "lblAbout";
             this.lblAbout.Size = new System.Drawing.Size(54, 20);
             this.lblAbout.TabIndex = 3;
@@ -82,7 +82,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(672, 438);
+            this.ClientSize = new System.Drawing.Size(672, 323);
             this.Controls.Add(this.lblAbout);
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.lblWlcm);

@@ -77,6 +77,7 @@ namespace Project
             richTxt.SelectionBackColor = Color.Yellow;
 
             lblTimer.Text = time.ToString() + " s";
+                
         }
 
 
@@ -314,6 +315,18 @@ namespace Project
         private void pbStart_MouseLeave(object sender, EventArgs e)
         {
             pbStart.Size = new Size(61, 54);
+        }
+
+        private void fmKeyboard_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 32)
+            {
+                btnStart_Click(sender, null);
+            }
+            if (e.KeyValue == 27)
+            {
+                toolBtnSettings_Click(sender, null);
+            }
         }
         
     }

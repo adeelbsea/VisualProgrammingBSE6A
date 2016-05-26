@@ -17,32 +17,24 @@ namespace Project
             InitializeComponent();
         }
 
-        private void lblKeyboard_Click(object sender, EventArgs e)
-        {
+   
 
+        private void lblAbout_Click(object sender, EventArgs e)
+        {
+            fmAbout ob = new fmAbout();
+            ob.ShowDialog();
         }
 
-        private void btnKeyboard_Click(object sender, EventArgs e)
+        private void pbStart_Click(object sender, EventArgs e)
         {
             this.Hide();
             fmSettings ob = new fmSettings();
             ob.Show();
         }
 
-        private void btnKeyboard_MouseEnter(object sender, EventArgs e)
+        private void lblExit_Click(object sender, EventArgs e)
         {
-            btnKeyboard.BackColor = Color.AliceBlue;
-        }
-
-        private void btnKeyboard_MouseLeave(object sender, EventArgs e)
-        {
-            btnKeyboard.BackColor = Color.GhostWhite;
-        }
-
-        private void lblAbout_Click(object sender, EventArgs e)
-        {
-            fmAbout ob = new fmAbout();
-            ob.ShowDialog();
+            Application.Exit();
         }
     }
 }

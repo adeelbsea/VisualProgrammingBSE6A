@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.lblWlcm = new System.Windows.Forms.Label();
-            this.btnKeyboard = new System.Windows.Forms.Button();
             this.lblAbout = new System.Windows.Forms.Label();
+            this.pbStart = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.lblExit = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStart)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWlcm
@@ -45,22 +49,6 @@
             this.lblWlcm.Size = new System.Drawing.Size(454, 36);
             this.lblWlcm.TabIndex = 1;
             this.lblWlcm.Text = "Welcome To Typing Speed Test";
-            // 
-            // btnKeyboard
-            // 
-            this.btnKeyboard.BackColor = System.Drawing.Color.GhostWhite;
-            this.btnKeyboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeyboard.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnKeyboard.Location = new System.Drawing.Point(306, 164);
-            this.btnKeyboard.Name = "btnKeyboard";
-            this.btnKeyboard.Size = new System.Drawing.Size(101, 60);
-            this.btnKeyboard.TabIndex = 2;
-            this.btnKeyboard.Text = "Start";
-            this.btnKeyboard.UseVisualStyleBackColor = false;
-            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
-            this.btnKeyboard.MouseEnter += new System.EventHandler(this.btnKeyboard_MouseEnter);
-            this.btnKeyboard.MouseLeave += new System.EventHandler(this.btnKeyboard_MouseLeave);
             // 
             // lblAbout
             // 
@@ -76,21 +64,53 @@
             this.lblAbout.Text = "About";
             this.lblAbout.Click += new System.EventHandler(this.lblAbout_Click);
             // 
+            // pbStart
+            // 
+            this.pbStart.BackColor = System.Drawing.Color.Transparent;
+            this.pbStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbStart.Image = ((System.Drawing.Image)(resources.GetObject("pbStart.Image")));
+            this.pbStart.Location = new System.Drawing.Point(293, 156);
+            this.pbStart.Name = "pbStart";
+            this.pbStart.Size = new System.Drawing.Size(122, 111);
+            this.pbStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStart.TabIndex = 4;
+            this.pbStart.TabStop = false;
+            this.toolTip.SetToolTip(this.pbStart, "Start Testing");
+            this.pbStart.Click += new System.EventHandler(this.pbStart_Click);
+          
+            // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.BackColor = System.Drawing.Color.Transparent;
+            this.lblExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblExit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblExit.Location = new System.Drawing.Point(23, 294);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(32, 20);
+            this.lblExit.TabIndex = 3;
+            this.lblExit.Text = "Exit";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            // 
             // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(672, 323);
+            this.Controls.Add(this.pbStart);
+            this.Controls.Add(this.lblExit);
             this.Controls.Add(this.lblAbout);
-            this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.lblWlcm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "fmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Typing Speed Test";
+            ((System.ComponentModel.ISupportInitialize)(this.pbStart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +119,9 @@
         #endregion
 
         private System.Windows.Forms.Label lblWlcm;
-        private System.Windows.Forms.Button btnKeyboard;
         private System.Windows.Forms.Label lblAbout;
+        private System.Windows.Forms.PictureBox pbStart;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Label lblExit;
     }
 }

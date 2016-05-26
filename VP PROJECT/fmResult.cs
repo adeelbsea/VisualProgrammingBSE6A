@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace Project
     public partial class fmResult : Form
     {
         int keyStrokes, correctWords, wrongWords, WCPM, Accuracy;
+
+        string today;
 
         public fmResult(int KS, int CW, int WW, int accuracy, int wcpm)
         {
@@ -28,22 +31,41 @@ namespace Project
 
         private void btnScreenshot_Click(object sender, EventArgs e)
         {
-            Rectangle bounds = this.Bounds;
-            using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+            if (btnScreenshot.Text == "Take &Screenshot")
             {
-                using (Graphics g = Graphics.FromImage(bitmap))
+                Rectangle bounds = this.Bounds;
+                using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
                 {
-                    g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
+                    using (Graphics g = Graphics.FromImage(bitmap))
+                    {
+                        g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
+                    }
+
+                    today = DateTime.Now.ToString("yyyyMMddhhmmss");
+                    bitmap.Save(@"C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\Screenshots\" + today + ".jpeg", ImageFormat.Jpeg);
                 }
 
-                string today = DateTime.Now.ToString("yyyyMMddhhmmss");
-                bitmap.Save("C:\\Users\\Adeel\\Desktop\\" + today + ".jpeg", ImageFormat.Jpeg);
+                playMedia();
+
+                btnScreenshot.Text = "&View Image";
+
+                //btnScreenshot.Visible = false;
+                //lblScreenshot.Text = "Screenshot taken";
+                //lblScreenshot.ForeColor = Color.Green;
+                //lblScreenshot.Visible = true;
             }
 
-            btnScreenshot.Visible = false;
-            lblScreenshot.Text = "Screenshot taken";
-            lblScreenshot.ForeColor = Color.Green;
-            lblScreenshot.Visible = true;
+            else
+            {
+                try
+                {
+                    Process.Start(@"C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\Screenshots\" + today + ".jpeg");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
 
         }
 
@@ -54,14 +76,51 @@ namespace Project
             lblWrongWords.Text = wrongWords.ToString();
             lblAccuracy.Text = Accuracy.ToString() + "%";
             lblSpeed.Text = WCPM.ToString();
+
+            btnScreenshot.Visible = true;
+
+            if (WCPM > 45)
+            {
+                lblYourSpeed.Text = "Pro";
+            }
+            else if (WCPM > 35)
+            {
+                lblYourSpeed.Text = "Fast";
+            }
+            else if (WCPM > 22)
+            {
+                lblYourSpeed.Text = "Fluent";
+            }
+            else if (WCPM > 12)
+            {
+                lblYourSpeed.Text = "Average";
+            }
+            else if (WCPM > 2)
+            {
+                lblYourSpeed.Text = "Slow";
+            }
+            else
+            {
+                lblYourSpeed.Text = "Very Poor";
+            }
+
         }
 
-        private void tsBtnPlayAgain_Click(object sender, EventArgs e)
+        private void playMedia()
         {
-            this.Close();
-            fmKeyboard ob = new fmKeyboard("Adeel", 10);
-            ob.Show();
-            ob.Hide();
+
+            try
+            {
+                WMPLib.WindowsMediaPlayer song = new WMPLib.WindowsMediaPlayer();
+                song.URL = @"C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\Sounds\Snap Sound.mp3";
+                song.controls.play();
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("Error: " + e.Message);
+            }
+
         }
+
     }
 }

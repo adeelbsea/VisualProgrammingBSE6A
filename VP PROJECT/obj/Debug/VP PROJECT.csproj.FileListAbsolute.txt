@@ -11,3 +11,7 @@ C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\D
 C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\Project.fmResult.resources
 C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\Project.fmSettings.resources
 C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\Project.fmAbout.resources
+C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\Interop.MediaPlayer.dll
+C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\Interop.WMLSS.dll
+C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\Interop.WMPLib.dll
+C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\obj\Debug\VP PROJECT.csproj.ResolveComReference.cache

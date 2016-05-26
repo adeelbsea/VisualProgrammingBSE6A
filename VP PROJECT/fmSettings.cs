@@ -56,6 +56,7 @@ namespace Project
         {
             OpenFileDialog openFD = new OpenFileDialog();
             openFD.Multiselect = false;
+            openFD.Filter = "Text files (*.txt)|*.txt";
 
             if (openFD.ShowDialog() == DialogResult.OK)
             {

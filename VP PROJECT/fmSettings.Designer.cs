@@ -61,7 +61,7 @@
             this.groupBoxSettings.Controls.Add(this.lblopenFile);
             this.groupBoxSettings.Location = new System.Drawing.Point(13, 25);
             this.groupBoxSettings.Name = "groupBoxSettings";
-            this.groupBoxSettings.Size = new System.Drawing.Size(466, 126);
+            this.groupBoxSettings.Size = new System.Drawing.Size(472, 126);
             this.groupBoxSettings.TabIndex = 0;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Customize Settings";
@@ -73,7 +73,7 @@
             0,
             0,
             0});
-            this.setTimer.Location = new System.Drawing.Point(278, 74);
+            this.setTimer.Location = new System.Drawing.Point(251, 74);
             this.setTimer.Maximum = new decimal(new int[] {
             120,
             0,
@@ -96,7 +96,7 @@
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(278, 26);
+            this.btnOpenFile.Location = new System.Drawing.Point(251, 26);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
             this.btnOpenFile.TabIndex = 1;
@@ -108,7 +108,7 @@
             // 
             this.lblFileName.AutoSize = true;
             this.lblFileName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblFileName.Location = new System.Drawing.Point(359, 34);
+            this.lblFileName.Location = new System.Drawing.Point(332, 34);
             this.lblFileName.Name = "lblFileName";
             this.lblFileName.Size = new System.Drawing.Size(0, 13);
             this.lblFileName.TabIndex = 14;
@@ -118,7 +118,7 @@
             this.lblTimer.AutoSize = true;
             this.lblTimer.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTimer.Location = new System.Drawing.Point(69, 72);
+            this.lblTimer.Location = new System.Drawing.Point(42, 72);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(128, 22);
             this.lblTimer.TabIndex = 2;
@@ -129,7 +129,7 @@
             this.lblopenFile.AutoSize = true;
             this.lblopenFile.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblopenFile.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblopenFile.Location = new System.Drawing.Point(69, 27);
+            this.lblopenFile.Location = new System.Drawing.Point(42, 27);
             this.lblopenFile.Name = "lblopenFile";
             this.lblopenFile.Size = new System.Drawing.Size(180, 22);
             this.lblopenFile.TabIndex = 0;
@@ -139,8 +139,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(491, 209);
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(497, 209);
             this.Controls.Add(this.groupBoxSettings);
             this.Controls.Add(this.btnDone);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

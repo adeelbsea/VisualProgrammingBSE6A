@@ -85,6 +85,16 @@ namespace Project
         {
             time--;
 
+            if (time == 5)
+            {
+                lblTimer.ForeColor = Color.Red;
+            }
+
+            if (time < 5)
+            {
+                playMedia();
+            }
+
             if(time == 0)
             {
                 timer.Stop();
@@ -109,11 +119,14 @@ namespace Project
 
                 txtInput.Text = "";
                 txtInput.ReadOnly = true;
+                richTxt.Focus();
             }
 
             lblTimer.Text = time.ToString();
             lblTimer.Text = lblTimer.Text + " s";
         }
+
+      
 
         private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -227,6 +240,7 @@ namespace Project
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+                
                 timer.Start();
                 pbStart.Visible = false;
                 txtInput.ReadOnly = false;
@@ -234,7 +248,7 @@ namespace Project
                 lblRemTime.Visible = true;
                 lblTimer.Visible = true;
                 txtInput.Focus();
-                toolBtnStart.Text = "Restart";
+                toolBtnStart.Text = "Retake";
                 toolBtnStart.Image = Bitmap.FromFile("C:\\Users\\Adeel\\Documents\\Visual Studio 2013\\Projects\\VP PROJECT\\VP PROJECT\\Images\\Restart.png");
         }
 
@@ -248,7 +262,7 @@ namespace Project
                 ob.Show();
             }
 
-            else if (toolBtnStart.Text == "Restart")
+            else if (toolBtnStart.Text == "Retake")
             {
                 if (time != 0)
                 {
@@ -280,11 +294,22 @@ namespace Project
                 return;
             }
 
-            if (toolBtnStart.Text == "Restart")
+            if (toolBtnStart.Text == "Retake")
             {
-                DialogResult dialogResult = MessageBox.Show("Do you want to restart the test?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (time != 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Do you want to retake the test?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (dialogResult == DialogResult.Yes)
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        timer.Stop();
+                        this.Hide();
+                        fmSettings ob = new fmSettings();
+                        ob.Show();
+                    }
+                }
+
+                else
                 {
                     timer.Stop();
                     this.Hide();
@@ -303,7 +328,7 @@ namespace Project
             lblRemTime.Visible = true;
             lblTimer.Visible = true;
             txtInput.Focus();
-            toolBtnStart.Text = "Restart";
+            toolBtnStart.Text = "Retake";
             toolBtnStart.Image = Bitmap.FromFile("C:\\Users\\Adeel\\Documents\\Visual Studio 2013\\Projects\\VP PROJECT\\VP PROJECT\\Images\\Restart.png");
         }
 
@@ -319,7 +344,7 @@ namespace Project
 
         private void fmKeyboard_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == 32)
+            if (e.KeyValue == 32 && time != 0)
             {
                 btnStart_Click(sender, null);
             }
@@ -327,6 +352,23 @@ namespace Project
             {
                 toolBtnSettings_Click(sender, null);
             }
+        }
+
+
+        private void playMedia()
+        {
+
+            try
+            {
+                WMPLib.WindowsMediaPlayer song = new WMPLib.WindowsMediaPlayer();
+                song.URL = @"C:\Users\Adeel\Documents\Visual Studio 2013\Projects\VP PROJECT\VP PROJECT\Sounds\Tick Sound.mp3";
+                song.controls.play();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
+            }
+
         }
         
     }

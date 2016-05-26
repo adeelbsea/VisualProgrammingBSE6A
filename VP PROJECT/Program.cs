@@ -27,6 +27,7 @@ namespace Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new fmKeyboard("Adeel nawaz ", 5));
+            //Application.Run(new fmResult(1,3,4,6,6));
             Application.Run(new fmMain());
 
             SystemParametersInfo(SPI_SETKEYBOARDCUES, 0, 0, 0);
